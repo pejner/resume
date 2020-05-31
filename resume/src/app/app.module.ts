@@ -3,17 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidenavComponent } from './modules/nav/sidenav/sidenav.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavModule } from './modules/nav/nav.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    NavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
