@@ -7,12 +7,13 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 
 export class HeaderComponent implements OnInit {
+    user: string;
     @Output() sidenavToggle = new EventEmitter<void>();
 
     constructor() { }
 
     ngOnInit() {
-
+      this.user = "pejner"
     }
 
     onSidenavToggle() {
