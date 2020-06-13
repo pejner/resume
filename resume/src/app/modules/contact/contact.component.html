@@ -1,15 +1,23 @@
 <section class="contact-form">
-  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"
+    #f="ngForm" (ngSubmit)="onSubmit(f)">
     <h1>Contact</h1>
-    <span>Have a question or want to work together?</span>
+    <div class="typewriter">
+      <h1>
+        Have a question or want to work together?
+      </h1>
+    </div>
+
+
+
     <!-- Name -->
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <input matInput type="text" placeholder="Your name" ngModel name="name"
         name required #nameInput="ngModel">
       <mat-error *ngIf="nameInput.hasError('required')">Name is <b>required</b></mat-error>
     </mat-form-field>
     <!-- Email -->
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <input matInput type="email" placeholder="Your email" ngModel name="email"
         email required #emailInput="ngModel">
       <mat-error *ngIf="!emailInput.hasError('required') &&
@@ -17,10 +25,14 @@
       </mat-error>
       <mat-error *ngIf="emailInput.hasError('required')">Email is <b>required</b></mat-error>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field appearance="outline">
+      <textarea matInput placeholder="Your Message" type="text" name="message"></textarea>
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="outline"> 
       <input matInput type="text" placeholder="What's on your mind?" ngModel
         name="massage">
-    </mat-form-field>
+    </mat-form-field> -->
     <!-- Send -->
     <button type="submit" mat-raised-button color="primary"
       [disabled]="f.invalid">Submit</button>
